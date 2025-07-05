@@ -23,18 +23,36 @@
 </head>
 
 <body>
-    <!-- preloader start -->
-    <div class="preloader-bg"></div>
-    <div id="preloader">
-        <div id="preloader-status">
-            <div class="preloader-position loader">
-                <span></span>
+    <!-- Preloader Start -->
+<div class="preloader-bg"></div>
+<div id="preloader">
+    <div id="preloader-status">
+        <div class="loader-animation" id="pageLoader">
+            <div class="animation-container">
+
+                <!-- Upper arrow (animated) -->
+                <div class="animation-arrow upper-arrow">
+                    <svg viewBox="0 0 30 30" width="30" height="30">
+                        <path class="arrow-shape" d="M 28.925781 7.269531 L 9.699219 6.414062 C 5.984375 6.25 5.355469 13.484375 9.757812 13.605469 L 21.722656 13.925781 L 20.808594 25.96875 C 20.53125 29.632812 27.679688 30.019531 27.882812 26.292969 Z"/>
+                    </svg>
+                </div>
+
+                <!-- Brand logo image (center) -->
+                <div class="animation-text brand-img">
+                    <img src="./img/BrandSetu.png" alt="BrandSetu Logo" class="brand-logo" />
+                </div>
+
+                <!-- Lower arrow (static) -->
+                <div class="animation-arrow lower-arrow">
+                    <svg viewBox="0 0 30 30" width="30" height="30">
+                        <path class="arrow-shape" d="M 27.476562 17.851562 L 8.25 16.996094 C 4.535156 16.832031 3.90625 24.066406 8.308594 24.1875 L 20.273438 24.511719 L 19.359375 36.550781 C 19.082031 40.214844 26.230469 40.601562 26.433594 36.878906 Z"/>
+                    </svg>
+                </div>
+
             </div>
         </div>
     </div>
-    <div class="preloader-after">
-        <div class="preloader-after-inner"></div>
-    </div><!-- preloader end -->
+</div>
     <!-- navigation start -->
     <div class="content content--demo-3 demo-3">
         <!-- navigation hamburger start -->
@@ -1213,6 +1231,26 @@
     <script src="js/contact.js">  </script>
     <!-- community Script -->
     <script src="js/community.js"> </script>
+     <script>
+        // Show loading animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide the animation after 2 seconds (adjust as needed)
+            setTimeout(function() {
+                document.getElementById('pageLoader').classList.add('hide');
+                
+                // Remove the element after the fade-out completes
+                setTimeout(function() {
+                    document.getElementById('pageLoader').remove();
+                }, 500); // Match this with the CSS transition duration
+            }, 2000);
+        });
+
+        // Also trigger on page refresh
+        window.onbeforeunload = function() {
+            // This ensures the animation shows even on refresh
+            document.getElementById('pageLoader').classList.remove('hide');
+        };
+    </script>
     <!-- scripts end -->
 </body>
 

@@ -4345,41 +4345,96 @@ border: none;
 
 
 /* 31. preloader */
-.preloader-bg {
-position: fixed;
-width: 100%;
-height: 100%;
-overflow: hidden;
-background: #fff;
-z-index: 999999;
+
+  /* animation effect */
+    /* ======================
+   Loading Animation
+   ====================== */
+.loader-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
 }
 
-#preloader {
-position: fixed;
-display: table;
-table-layout: fixed;
-width: 100%;
-height: 100%;
-overflow: hidden;
-background: #fff;
-z-index: 999999;
+.loader-animation.hide {
+    opacity: 0;
+    pointer-events: none;
 }
 
-#preloader-status {
-display: table-cell;
-vertical-align: middle;
+.animation-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
 }
 
-.preloader-position {
-position: relative;
-margin: 0 auto;
-text-align: center;
--webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-     -o-box-sizing: border-box;
-        box-sizing: border-box;
+.animation-arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
 }
+
+/* Upper arrow (animated) */
+.upper-arrow {
+    top: 68px;
+    left: 107px;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+/* Lower arrow (static) */
+.lower-arrow {
+    top: 73px;
+    left: 98px;
+    animation: bounce 1s infinite ease-out;
+}
+
+.arrow-shape {
+    fill: rgb(223, 118, 83); /* Using your brand color */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.animation-text {
+    position: absolute;
+    color: #1a1a1a; 
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* .brand-text {
+    top: 100px;
+    left: 33px;
+} */
+.brand-img{
+ /* position: fixed; */
+  display: block;
+  width: 249px;
+  height: 225px;
+  left: -55px;
+  top: 18px;
+  z-index: 100;
+  background-image: url(../img/BrandSetu_copy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+/* .setu-text {
+    top: 125px;
+    left: 55px;
+} */
 
 .loader {
 position: relative;
