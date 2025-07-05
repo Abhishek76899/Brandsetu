@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const messageDiv = document.getElementById('formError');
   const submitButton = form.querySelector('button[type="submit"]');
 
-  // Spinner CSS (optional to move to stylesheet)
+  // Inject spinner style (optional: move this to CSS file)
   const spinnerStyle = document.createElement('style');
   spinnerStyle.textContent = `
     .spinner2 {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.head.appendChild(spinnerStyle);
 
   // Validation functions
-  const validateWhatsApp = number => number.replace().length >= 10;
+  const validateWhatsApp = number => number.replace(/\D/g, '').length >= 10;
   const validateEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   // Real-time input validation
@@ -38,27 +38,29 @@ document.addEventListener('DOMContentLoaded', function () {
     emailError.textContent = validateEmail(emailInput.value) ? '' : 'Please enter a valid email address';
   });
 
+  // Form submission
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     messageDiv.textContent = '';
     messageDiv.style.display = 'none';
 
+    // Basic HTML5 validation
     if (!form.checkValidity()) {
       messageDiv.textContent = 'Please fill all required fields correctly.';
       messageDiv.style.color = '#dc3545';
       messageDiv.style.display = 'block';
-
       form.querySelectorAll(':invalid').forEach(field => {
         field.style.borderColor = '#dc3545';
       });
       return;
     }
 
+    // Manual validation
     const formData = new FormData(form);
     let isValid = true;
 
-    if (!validateWhatsApp(formData.get('Whatsapp'))) {
+    if (!validateWhatsApp(formData.get('WhatsApp'))) {
       whatsappError.textContent = 'Please enter a valid WhatsApp number';
       isValid = false;
     }
@@ -81,9 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       const urlEncodedData = new URLSearchParams(formData).toString();
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxonryNOaBhPMwAQNoH6hk9NggHU6wHFjBQScfDXonIoqSO5xB0PD-dUKVSYBFT7bHw/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyrYIoDw_oV_Lysgfxkq3eLLQRv7FvvzY_6HbYeirurHv622E_5G8fgbz-R4N-v-LjP/exec';
 
-      const response = await fetch(scriptURL, {
+      const res = await fetch(scriptURL, {
         method: 'POST',
         body: urlEncodedData,
         headers: {
@@ -92,12 +94,18 @@ document.addEventListener('DOMContentLoaded', function () {
         redirect: 'follow'
       });
 
-      // Show success message
-      messageDiv.textContent = 'Thank you! Your message has been sent successfully.';
-      messageDiv.style.color = '#28a745';
-      messageDiv.style.display = 'block';
-      form.reset();
+      const result = await res.json();
 
+      if (result.result === 'success') {
+        messageDiv.textContent = result.message;
+        messageDiv.style.color = '#28a745';
+        form.reset();
+      } else {
+        messageDiv.textContent = result.message || 'Something went wrong.';
+        messageDiv.style.color = '#dc3545';
+      }
+
+      messageDiv.style.display = 'block';
       setTimeout(() => {
         messageDiv.style.display = 'none';
       }, 5000);
@@ -112,11 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Clear error borders and messages when typing
+  // Clear field-specific errors when user starts typing
   form.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', function () {
       this.style.borderColor = '';
-      if (this.name === 'Whatsapp') whatsappError.textContent = '';
+      if (this.name === 'WhatsApp') whatsappError.textContent = '';
       if (this.name === 'Email') emailError.textContent = '';
     });
   });
