@@ -73,52 +73,24 @@
     max-width: none; }
 
 /* style is added when JS option showHideOpacity is set to true */
-.pswp--animate_opacity {
+/* .pswp--animate_opacity { */
   /* 0.001, because opacity:0 doesn't trigger Paint action, which causes lag at start of transition */
-  opacity: 0.001;
-  will-change: opacity;
+  /* opacity: 0.001; */
+  /* will-change: opacity; */
   /* for open/close transition */
-  -webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
-          transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1); }
+  /* -webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+          transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1); } */
 
-.pswp--open {
-  display: block; }
+/* .pswp--open {
+  display: block; } */
 
-.pswp--zoom-allowed .pswp__img {
-  /* autoprefixer: off */
-  cursor: -webkit-zoom-in;
-  cursor: -moz-zoom-in;
-  cursor: zoom-in; }
 
-.pswp--zoomed-in .pswp__img {
-  /* autoprefixer: off */
-  cursor: -webkit-grab;
-  cursor: -moz-grab;
-  cursor: grab; }
-
-.pswp--dragging .pswp__img {
-  /* autoprefixer: off */
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-  cursor: grabbing; }
 
 /*
 	Background is added as a separate element.
 	As animating opacity is much faster than animating rgba() background-color.
 */
-.pswp__bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  opacity: 0;
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  will-change: opacity; }
-
-.pswp__scroll-wrap {
+.scroll-wrap {
   position: absolute;
   left: 0;
   top: 0;
@@ -432,10 +404,10 @@
 
 .pswp__share-modal--fade-in {
   opacity: 1; }
-  .pswp__share-modal--fade-in .pswp__share-tooltip {
+  /* .pswp__share-modal--fade-in .pswp__share-tooltip {
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
-            transform: translateY(0); }
+            transform: translateY(0); } */
 
 /* increase size of share links on touch devices */
 .pswp--touch .pswp__share-tooltip a {
@@ -550,7 +522,8 @@ a.pswp__share--download:hover {
   opacity: 1; }
   .pswp__preloader--active .pswp__preloader__icn {
     /* We use .gif in browsers that don't support CSS animation */
-    background: url(../photoswipe/default-skin/preloader.gif) 0 0 no-repeat; }
+    background: url(../photoswipe/default-skin/preloader.gif) 0 0 no-repeat; 
+  }
 
 .pswp--css_animation .pswp__preloader--active {
   opacity: 1; }

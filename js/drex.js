@@ -41,14 +41,13 @@ $(function() {
 	
     $(window).on("load", function() {
         // 1. preloader
-        $("#preloader").fadeOut(600);
-        $(".preloader-bg").delay(400).fadeOut(600);
+        $("#preloader").delay(1000).fadeOut(2000);
 		
         // 2. show elements
         // 2.1. page loaded
         setTimeout(function() {
             $("body").addClass("page-loaded");
-        }, 400);
+        }, 0.2);
         // 2.2. page ready
         $("body").addClass("page-ready");
 		
@@ -265,3 +264,27 @@ document.querySelectorAll('.show-more-btn').forEach(button => {
     });
     
 });
+const items = document.querySelectorAll('.hover-effect-img');
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const full = item.getAttribute('data-full');
+      const link = item.getAttribute('data-link');
+      modal.style.display = 'flex';
+      modalImg.src = full;
+      modalImg.dataset.link = link;
+    });
+  });
+
+  modalImg.addEventListener('click', () => {
+    const url = modalImg.dataset.link;
+    window.open(url, '_blank');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target !== modalImg) {
+      modal.style.display = 'none';
+    }
+  });

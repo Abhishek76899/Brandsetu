@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Brand Store Development | BrandSetu</title>
+    <meta name="description" content="Custom eCommerce store development for Shopify, WooCommerce and more">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style start -->
+    <link href="css/premium.css" rel="stylesheet"> <!-- New premium styles -->
+    <link rel="stylesheet" href="css/plugins.css" media="all" type="text/css">
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css">
+    <!-- google fonts start -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7CDM+Sans:300,400,700" rel="stylesheet">
+    <style>
+        /* Inherit all the main CSS styles from your primary stylesheet */
+        
+        /* Service Page Specific Styles */
+        .service-hero {
+            background-color: var(--light-color);
+            padding: 120px 0 80px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-hero h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 65px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .service-hero p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 0 30px;
+            line-height: 1.8;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 55px;
+        }
+        
+        .section-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 35px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-intro {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 23px;
+            font-style: italic;
+            color: #000;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .service-feature-card {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid #f5f5f5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .service-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-feature-card h3 {
+            color: #FFB001;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .service-feature-card p, 
+        .service-feature-card li {
+            color: #000;
+            font-family: 'Raleway', sans-serif;
+            line-height: 2;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .service-feature-card ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .service-feature-card li {
+            margin-bottom: 10px;
+            position: relative;
+            list-style-type: none;
+        }
+        
+        .service-feature-card li:before {
+            content: "—";
+            color: #FFB001;
+            position: absolute;
+            left: -20px;
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .platform-card {
+            background: white;
+            border-radius: 0;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #f5f5f5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .platform-card img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .platform-card h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .platform-card p {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .results-section {
+            /* background: #f8f9fa; */
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        
+        .result-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 0;
+            border: 1px solid #f5f5f5;
+        }
+        
+        .result-item .number {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #FFB001;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        
+        .result-item p {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .process-step {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            position: relative;
+            border: 1px solid #f5f5f5;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            background: #FFB001;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        /* Button Styles */
+        .btn {
+            /* display: inline-block; */
+            padding: 12px 30px;
+            /* background: #FFB001; */
+            color: black;
+            border-bottom: none;
+            border-top: none;
+            border-right: 1px solid orange;
+            border-left: 1px solid orange;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 11px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.5s;
+        }
+      
+        .btn:hover:after {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            /* color: black; */
+             border-bottom: 1px;
+            border-top: 1px;
+        }
+        
+        /* Responsive Styles */
+        @media only screen and (max-width: 995px) {
+            .service-hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .section-intro {
+                font-size: 20px;
+            }
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .service-container {
+                padding: 60px 20px;
+            }
+            
+            .service-hero h1 {
+                font-size: 40px;
+            }
+            
+            .platform-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media only screen and (max-width: 640px) {
+            .service-hero h1 {
+                font-size: 32px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div id="preloader-status">
+            <div class="loader-animation" id="pageLoader">
+                <div class="animation-container">
+
+                    <!-- Upper arrow (animated) -->
+                    <div class="animation-arrow upper-arrow">
+                        <svg viewBox="0 0 30 30" width="30" height="30">
+                            <path class="arrow-shape"
+                                d="M 28.925781 7.269531 L 9.699219 6.414062 C 5.984375 6.25 5.355469 13.484375 9.757812 13.605469 L 21.722656 13.925781 L 20.808594 25.96875 C 20.53125 29.632812 27.679688 30.019531 27.882812 26.292969 Z" />
+                        </svg>
+                    </div>
+
+                    <!-- Brand logo image (center) -->
+                    <div class="animation-text brand-img">
+                        <img src="./img/BrandSetu.png" alt="BrandSetu Logo" class="brand-logo" />
+                    </div>
+
+                    <!-- Lower arrow (static) -->
+                    <div class="animation-arrow lower-arrow">
+                        <svg viewBox="0 0 30 30" width="30" height="30">
+                            <path class="arrow-shape"
+                                d="M 27.476562 17.851562 L 8.25 16.996094 C 4.535156 16.832031 3.90625 24.066406 8.308594 24.1875 L 20.273438 24.511719 L 19.359375 36.550781 C 19.082031 40.214844 26.230469 40.601562 26.433594 36.878906 Z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation would be included here from your main template -->
+    <!-- navigation start -->
+    <div class="content content--demo-3 demo-3">
+        <!-- navigation hamburger start -->
+        <div class="hamburger hamburger--demo-3">
+            <div class="hamburger__line hamburger__line--01">
+                <div class="hamburger__line-in hamburger__line-in--01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--02">
+                <div class="hamburger__line-in hamburger__line-in--02"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--03">
+                <div class="hamburger__line-in hamburger__line-in--03"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross01">
+                <div class="hamburger__line-in hamburger__line-in--cross01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross02">
+                <div class="hamburger__line-in hamburger__line-in--cross02"></div>
+            </div>
+        </div><!-- navigation hamburger end -->
+        <!-- navigation menu start -->
+        <nav class="global-menu">
+            <ul class="menu brackets page-scroll-closer">
+                <li>
+                    <a class="page-scroll menu-state active global-menu__item global-menu__item--demo-3"
+                        href="index.html"><span class="menu-number">00.</span>Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">01.</span>About US</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">02.</span>Services</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">03.</span>Contact</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3"
+                        href="index.html"><span class="menu-number">04.</span>Community</a>
+                </li>
+            </ul>
+        </nav><!-- navigation menu end -->
+        <!-- navigation overlay start -->
+        <svg class="shape-overlays" preserveaspectratio="none" viewbox="0 0 100 100">
+            <path class="shape-overlays__path" d=""></path>
+            <path class="shape-overlays__path" d=""></path>
+            <path class="shape-overlays__path" d=""></path>
+        </svg><!-- navigation overlay end -->
+    
+    <section class="service-hero">
+        <div class="container">
+            <h1>Brand Store Development</h1>
+            <p>Create a stunning online store that reflects your brand identity and converts visitors into customers</p>
+            <div class="the-button-wrapper sign-up-modal-launcher">
+                <a href="index.html" class="the-button">Get Started</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="service-container">
+        <h2 class="section-title">Custom eCommerce Solutions</h2>
+        <p class="section-intro">We build high-performing online stores tailored to your brand and business needs</p>
+        
+        <div class="service-feature-card">
+            <h3>Custom Store Design</h3>
+            <p>Our team creates unique, brand-aligned designs that provide seamless shopping experiences across all devices.</p>
+            <ul>
+                <li>Mobile-first responsive design</li>
+                <li>Custom UI/UX tailored to your products</li>
+                <li>Brand-consistent color schemes and typography</li>
+                <li>High-converting product pages</li>
+            </ul>
+        </div>
+        
+        <div class="service-feature-card">
+            <h3>Full Development Services</h3>
+            <p>From initial setup to advanced functionality, we handle all technical aspects of your store.</p>
+            <ul>
+                <li>Platform selection and setup</li>
+                <li>Custom theme development</li>
+                <li>Payment gateway integration</li>
+                <li>Shipping and tax configuration</li>
+            </ul>
+        </div>
+        
+        <h2 class="section-title">Our Development Process</h2>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Discovery & Planning</h3>
+                <p>We analyze your business needs, target audience, and competitors to create a strategic roadmap.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Design & Prototyping</h3>
+                <p>Our designers create wireframes and mockups for your approval before development begins.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Development</h3>
+                <p>We build your store with clean, efficient code and integrate all necessary features.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Testing & Launch</h3>
+                <p>Rigorous testing ensures everything works perfectly before your store goes live.</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Platforms We Specialize In</h2>
+        
+        <div class="platform-grid">
+            <div class="platform-card">
+                <img src="https://cdn.worldvectorlogo.com/logos/shopify.svg" alt="Shopify">
+                <h4>Shopify</h4>
+                <p>The leading eCommerce platform with powerful features and easy management</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="https://cdn.worldvectorlogo.com/logos/woocommerce.svg" alt="WooCommerce">
+                <h4>WooCommerce</h4>
+                <p>Flexible WordPress eCommerce solution with complete customization</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="https://cdn.worldvectorlogo.com/logos/magento.svg" alt="Magento">
+                <h4>Magento</h4>
+                <p>Enterprise-level platform for large-scale eCommerce operations</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="https://th.bing.com/th/id/OIP.w0wb_xNlPIHGFC4cWl9figHaHa?w=175&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Custom Solutions">
+                <h4>Custom Solutions</h4>
+                <p>Tailored eCommerce solutions built from the ground up</p>
+            </div>
+        </div>
+    </div>
+    
+    <section class="results-section">
+        <div class="service-container">
+            <h2 class="section-title">Our Store Development Results</h2>
+            <p class="section-intro">See how we've helped brands create successful online stores</p>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="number">87%</div>
+                    <p>Increase in conversion rates</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">3.2s</div>
+                    <p>Average page load time</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">99.9%</div>
+                    <p>Uptime reliability</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">4.9★</div>
+                    <p>Client satisfaction rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer would be included here from your main template -->
+    
+    <script>
+        // Simple animation script
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-feature-card, .platform-card, .result-item, .process-step');
+            
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease-out';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+        });
+    </script>
+    <script src="js/plugins.js">
+    </script>
+    <script src="js/drex.js">
+    </script>
+</body>
+</html>

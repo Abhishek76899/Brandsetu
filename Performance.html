@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Performance Analytics | BrandSetu</title>
+    <meta name="description" content="Data-driven insights for your eCommerce business">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/premium.css" rel="stylesheet"> <!-- New premium styles -->
+    <link rel="stylesheet" href="css/plugins.css" media="all" type="text/css">
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css">
+    <!-- google fonts start -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7CDM+Sans:300,400,700" rel="stylesheet">
+    <style>
+        /* Inherit all the main CSS styles from your primary stylesheet */
+        
+        /* Analytics Page Specific Styles */
+        .analytics-hero {
+            background-color: var(--light-color);
+            padding: 120px 0 80px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .analytics-hero h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 65px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .analytics-hero p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 0 30px;
+            line-height: 1.8;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .dashboard-preview {
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 1px solid #f5f5f5;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .dashboard-preview img {
+            width: 100%;
+            display: block;
+        }
+        
+        .metrics-section {
+            padding: 80px 55px;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 35px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-intro {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 23px;
+            font-style: italic;
+            color: #000;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 40px;
+            border: 1px solid #f5f5f5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .metric-card h3 {
+            color: #000;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .metric-card p {
+            color: #000;
+            font-family: 'Raleway', sans-serif;
+            line-height: 2;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .metric-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 176, 1, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .metric-icon svg path {
+            stroke: #FFB001;
+        }
+        
+        .report-types {
+            padding: 80px 55px;
+            text-align: left;
+        }
+        
+        .report-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .report-card {
+            background: white;
+            padding: 40px;
+            border: 1px solid #f5f5f5;
+            border-top: 4px solid #FFB001;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .report-card h4 {
+            color: #000;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .report-card p {
+            color: #000;
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.8;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .integration-section {
+            /* background: #1a1a1a; */
+            color:  #1a1a1a;
+            padding: 80px 55px;
+            text-align: left;
+        }
+        
+        .integration-section .section-title {
+            color:  #1a1a1a;
+        }
+        
+        .integration-section p {
+            color: rgba(255,255,255,0.8);
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .integration-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            color:  #1a1a1a;
+            margin-top: 50px;
+            align-items: center;
+        }
+        
+        .integration-logos img {
+            height: 40px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .integration-logos img:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+            color:  #1a1a1a;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #FFB001;
+            color: white;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 11px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover:after {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            color: white;
+        }
+        
+        /* Responsive Styles */
+        @media only screen and (max-width: 995px) {
+            .analytics-hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .section-intro {
+                font-size: 20px;
+            }
+            
+            .metrics-section,
+            .report-types,
+            .integration-section {
+                padding: 60px 40px;
+            }
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .analytics-hero h1 {
+                font-size: 40px;
+            }
+            
+            .metrics-grid,
+            .report-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .integration-logos {
+                justify-content: center;
+                gap: 30px;
+            }
+            
+            .metrics-section,
+            .report-types,
+            .integration-section {
+                padding: 60px 20px;
+            }
+        }
+        
+        @media only screen and (max-width: 640px) {
+            .analytics-hero h1 {
+                font-size: 32px;
+            }
+            
+            .analytics-hero p {
+                font-size: 16px;
+            }
+            
+            .integration-logos img {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation would be included here from your main template -->
+        <!-- Preloader Start -->
+    <div id="preloader">
+        <div id="preloader-status">
+            <div class="loader-animation" id="pageLoader">
+                <div class="animation-container">
+
+                    <!-- Upper arrow (animated) -->
+                    <div class="animation-arrow upper-arrow">
+                        <svg viewBox="0 0 30 30" width="30" height="30">
+                            <path class="arrow-shape"
+                                d="M 28.925781 7.269531 L 9.699219 6.414062 C 5.984375 6.25 5.355469 13.484375 9.757812 13.605469 L 21.722656 13.925781 L 20.808594 25.96875 C 20.53125 29.632812 27.679688 30.019531 27.882812 26.292969 Z" />
+                        </svg>
+                    </div>
+
+                    <!-- Brand logo image (center) -->
+                    <div class="animation-text brand-img">
+                        <img src="./img/BrandSetu.png" alt="BrandSetu Logo" class="brand-logo" />
+                    </div>
+
+                    <!-- Lower arrow (static) -->
+                    <div class="animation-arrow lower-arrow">
+                        <svg viewBox="0 0 30 30" width="30" height="30">
+                            <path class="arrow-shape"
+                                d="M 27.476562 17.851562 L 8.25 16.996094 C 4.535156 16.832031 3.90625 24.066406 8.308594 24.1875 L 20.273438 24.511719 L 19.359375 36.550781 C 19.082031 40.214844 26.230469 40.601562 26.433594 36.878906 Z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navigation start -->
+    <div class="content content--demo-3 demo-3">
+        <!-- navigation hamburger start -->
+        <div class="hamburger hamburger--demo-3">
+            <div class="hamburger__line hamburger__line--01">
+                <div class="hamburger__line-in hamburger__line-in--01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--02">
+                <div class="hamburger__line-in hamburger__line-in--02"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--03">
+                <div class="hamburger__line-in hamburger__line-in--03"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross01">
+                <div class="hamburger__line-in hamburger__line-in--cross01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross02">
+                <div class="hamburger__line-in hamburger__line-in--cross02"></div>
+            </div>
+        </div><!-- navigation hamburger end -->
+        <!-- navigation menu start -->
+        <nav class="global-menu">
+            <ul class="menu brackets page-scroll-closer">
+                <li>
+                    <a class="page-scroll menu-state active global-menu__item global-menu__item--demo-3"
+                        href="#home"><span class="menu-number">00.</span>Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="#about"><span
+                            class="menu-number">01.</span>About US</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="#services"><span
+                            class="menu-number">02.</span>Services</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="#contact"><span
+                            class="menu-number">03.</span>Contact</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3"
+                        href="#community"><span class="menu-number">04.</span>Community</a>
+                </li>
+            </ul>
+        </nav><!-- navigation menu end -->
+        <!-- navigation overlay start -->
+        <svg class="shape-overlays" preserveaspectratio="none" viewbox="0 0 100 100">
+            <path class="shape-overlays__path" d=""></path>
+            <path class="shape-overlays__path" d=""></path>
+            <path class="shape-overlays__path" d=""></path>
+        </svg><!-- navigation overlay end -->
+    </div><!-- navigation end -->
+    <section class="analytics-hero">
+        <div class="container">
+            <h1>Performance Analytics</h1>
+            <p>Turn your eCommerce data into actionable insights with our comprehensive analytics platform</p>
+            <div class="the-button-wrapper sign-up-modal-launcher">
+                        <a href="index.html" class="the-button">Request Demo</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="dashboard-preview">
+        <img src="img/dashboard-preview.jpg" alt="Analytics Dashboard Preview">
+    </div>
+    
+    <section class="metrics-section">
+        <h2 class="section-title">Key Metrics We Track</h2>
+        <p class="section-intro">Monitor the most important indicators of your eCommerce performance</p>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" stroke="#FFB001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 8V12L15 15" stroke="#FFB001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Conversion Rates</h3>
+                <p>Track how many visitors become customers and identify opportunities to improve your conversion funnel.</p>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1V23" stroke="#FFB001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="#FFB001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Revenue Trends</h3>
+                <p>Analyze sales patterns over time to identify seasonal trends and growth opportunities.</p>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 8A6 6 0 0 0 6 8C6 11 3 12 3 15H21C21 12 18 11 18 8Z" stroke="#FFB001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6981 21.5547 10.4458 21.3031 10.27 21" stroke="#FFB001" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Customer Acquisition</h3>
+                <p>Measure where your customers come from and which channels deliver the highest ROI.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="report-types">
+        <h2 class="section-title">Automated Reporting</h2>
+        <p class="section-intro">Receive regular reports with the insights you need, delivered how you want them</p>
+        
+        <div class="report-cards">
+            <div class="report-card">
+                <h4>Daily Snapshots</h4>
+                <p>Quick overview of key metrics delivered to your inbox every morning.</p>
+            </div>
+            
+            <div class="report-card">
+                <h4>Weekly Deep Dives</h4>
+                <p>Comprehensive analysis of weekly performance trends.</p>
+            </div>
+            
+            <div class="report-card">
+                <h4>Monthly Executive Reports</h4>
+                <p>High-level insights for stakeholders and decision makers.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="integration-section">
+        <h2 class="section-title">Seamless Integrations</h2>
+        <p class="section-intro">Connect with all your eCommerce platforms and marketing tools</p>
+        
+        <div class="integration-logos">
+  <img src="data:image/webp;base64,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" alt="Amazon">
+  <img src="https://th.bing.com/th/id/OIP.vTAHYPeLEe8WzfcZyndQugHaEK?w=314&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Shopify">
+  <img src="https://th.bing.com/th/id/OIP.BZflXgPLOzJ2uDtMyyE5hwHaDF?w=312&h=145&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Google Analytics">
+  <img src="https://th.bing.com/th/id/OIP.FQYyu80e7eHzc3lbL4BzBQHaHY?w=175&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Facebook">
+  <img src="https://th.bing.com/th/id/OIP.VHloij6S_ID2JwV7XXZp4wHaHa?w=199&h=199&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Instagram">
+</div>
+
+    </section>
+    
+    <!-- Footer would be included here from your main template -->
+    
+    <script>
+        // Simple animation for metric cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.metric-card, .report-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
+    <script src="js/plugins.js">
+    </script>
+    <script src="js/drex.js">
+    </script>
+</body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Smart Inventory Management | BrandSetu</title>
+    <meta name="description" content="Automated inventory synchronization and demand forecasting for multi-channel eCommerce businesses">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style start -->
+    <link href="css/premium.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/plugins.css" media="all" type="text/css">
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css">
+    <!-- google fonts start -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7CDM+Sans:300,400,700" rel="stylesheet">
+    <style>
+        /* Inherit all the main CSS styles from your primary stylesheet */
+        
+        /* Service Page Specific Styles */
+        .service-hero {
+            background-color: var(--light-color);
+            padding: 120px 0 80px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-hero h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 65px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .service-hero p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 0 30px;
+            line-height: 1.8;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 55px;
+        }
+        
+        .section-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 35px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-intro {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 23px;
+            font-style: italic;
+            color: #000;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .service-feature-card {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid #f5f5f5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .service-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-feature-card h3 {
+            color: #FFB001;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .service-feature-card p, 
+        .service-feature-card li {
+            color: #000;
+            font-family: 'Raleway', sans-serif;
+            line-height: 2;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .service-feature-card ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .service-feature-card li {
+            margin-bottom: 10px;
+            position: relative;
+            list-style-type: none;
+        }
+        
+        .service-feature-card li:before {
+            content: "—";
+            color: #FFB001;
+            position: absolute;
+            left: -20px;
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .platform-card {
+            background: white;
+            border-radius: 0;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #f5f5f5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .platform-card img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .platform-card h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .platform-card p {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .results-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        
+        .result-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 0;
+            border: 1px solid #f5f5f5;
+        }
+        
+        .result-item .number {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #FFB001;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        
+        .result-item p {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        /* Feature Grid Styles */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 0;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #f5f5f5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 176, 1, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-icon img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .feature-card h3 {
+            color: #000;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .feature-card p {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        /* Dashboard Preview */
+        .dashboard-preview {
+            max-width: 100%;
+            margin: 40px 0;
+            border: 1px solid #f5f5f5;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .benefit-icon {
+            flex: 0 0 30px;
+            color: #FFB001;
+            font-size: 20px;
+            margin-right: 15px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+        }
+        
+        .benefit-content h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+        }
+        
+        .benefit-content p {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        /* Integrations Section */
+        .integration-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .integration-logos img {
+            height: 40px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .integration-logos img:hover {
+            opacity: 1;
+        }
+        
+        /* Testimonial Card */
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 0;
+            border: 1px solid #f5f5f5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card p {
+            font-family: 'Raleway', sans-serif;
+            font-style: italic;
+            font-size: 18px;
+            color: #000;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .testimonial-author h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+        
+        .testimonial-author p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            font-style: normal;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #FFB001;
+            color: white;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 11px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover:after {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            color: white;
+        }
+        
+        /* Responsive Styles */
+        @media only screen and (max-width: 995px) {
+            .service-hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .section-intro {
+                font-size: 20px;
+            }
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .service-container {
+                padding: 60px 20px;
+            }
+            
+            .service-hero h1 {
+                font-size: 40px;
+            }
+            
+            .platform-grid,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media only screen and (max-width: 640px) {
+            .service-hero h1 {
+                font-size: 32px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="preloader">
+        <div id="preloader-status">
+            <div class="loader-animation" id="pageLoader">
+                <div class="animation-container">
+
+                    <!-- Upper arrow (animated) -->
+                    <div class="animation-arrow upper-arrow">
+                        <svg viewBox="0 0 30 30" width="30" height="30">
+                            <path class="arrow-shape"
+                                d="M 28.925781 7.269531 L 9.699219 6.414062 C 5.984375 6.25 5.355469 13.484375 9.757812 13.605469 L 21.722656 13.925781 L 20.808594 25.96875 C 20.53125 29.632812 27.679688 30.019531 27.882812 26.292969 Z" />
+                        </svg>
+                    </div>
+
+                    <!-- Brand logo image (center) -->
+                    <div class="animation-text brand-img">
+                        <img src="./img/BrandSetu.png" alt="BrandSetu Logo" class="brand-logo" />
+                    </div>
+
+                    <!-- Lower arrow (static) -->
+                    <div class="animation-arrow lower-arrow">
+                        <svg viewBox="0 0 30 30" width="30" height="30">
+                            <path class="arrow-shape"
+                                d="M 27.476562 17.851562 L 8.25 16.996094 C 4.535156 16.832031 3.90625 24.066406 8.308594 24.1875 L 20.273438 24.511719 L 19.359375 36.550781 C 19.082031 40.214844 26.230469 40.601562 26.433594 36.878906 Z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation would be included here from your main template -->
+        <!-- navigation start -->
+    <div class="content content--demo-3 demo-3">
+        <!-- navigation hamburger start -->
+        <div class="hamburger hamburger--demo-3">
+            <div class="hamburger__line hamburger__line--01">
+                <div class="hamburger__line-in hamburger__line-in--01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--02">
+                <div class="hamburger__line-in hamburger__line-in--02"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--03">
+                <div class="hamburger__line-in hamburger__line-in--03"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross01">
+                <div class="hamburger__line-in hamburger__line-in--cross01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross02">
+                <div class="hamburger__line-in hamburger__line-in--cross02"></div>
+            </div>
+        </div><!-- navigation hamburger end -->
+        <!-- navigation menu start -->
+        <nav class="global-menu">
+            <ul class="menu brackets page-scroll-closer">
+                <li>
+                    <a class="page-scroll menu-state active global-menu__item global-menu__item--demo-3"
+                        href="index.html"><span class="menu-number">00.</span>Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">01.</span>About US</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">02.</span>Services</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">03.</span>Contact</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3"
+                        href="index.html"><span class="menu-number">04.</span>Community</a>
+                </li>
+            </ul>
+        </nav><!-- navigation menu end -->
+        <!-- navigation overlay start -->
+        <svg class="shape-overlays" preserveaspectratio="none" viewbox="0 0 100 100">
+            <path class="shape-overlays__path" d=""></path>
+            <path class="shape-overlays__path" d=""></path>
+            <path class="shape-overlays__path" d=""></path>
+        </svg><!-- navigation overlay end -->      
+    
+    <section class="service-hero">
+        <div class="container">
+            <h1>Smart Inventory Management</h1>
+            <p>Automated inventory synchronization and demand forecasting for multi-channel eCommerce businesses</p>
+            <div class="the-button-wrapper sign-up-modal-launcher">
+                        <a href="index.html" class="the-button">Get Started</a>
+            </div>        </div>
+    </section>
+    
+    <div class="service-container">
+        <h2 class="section-title">Real-Time Inventory Control</h2>
+        <p class="section-intro">Our intelligent inventory management system ensures you never oversell or stockout by automatically synchronizing stock levels across all your sales channels in real-time.</p>
+        
+        <div class="dashboard-preview">
+            <img src="img/inventory-dashboard.jpg" alt="Inventory Dashboard" class="img-responsive">
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="img/sync-icon.svg" alt="Sync">
+                </div>
+                <h3>Multi-Channel Sync</h3>
+                <p>Automatic inventory updates across Amazon, Flipkart, Shopify, and all your sales platforms with configurable sync intervals.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="img/forecast-icon.svg" alt="Forecasting">
+                </div>
+                <h3>Demand Forecasting</h3>
+                <p>AI-powered predictions for optimal stock levels based on sales trends, seasonality, and market factors.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="img/alert-icon.svg" alt="Alerts">
+                </div>
+                <h3>Low Stock Alerts</h3>
+                <p>Customizable notifications when inventory reaches threshold levels with recommended reorder quantities.</p>
+            </div>
+        </div>
+        
+        <div class="service-feature-card">
+            <h3>Inventory Optimization</h3>
+            <p>Our system analyzes your sales patterns to recommend optimal stock levels, reducing both stockouts and overstock situations.</p>
+            <ul>
+                <li>Automated reorder point calculations</li>
+                <li>Seasonal demand forecasting</li>
+                <li>Multi-warehouse inventory balancing</li>
+                <li>Dead stock identification</li>
+            </ul>
+        </div>
+        
+        <div class="service-feature-card">
+            <h3>Reporting & Analytics</h3>
+            <p>Comprehensive reports give you visibility into your inventory performance across all channels.</p>
+            <ul>
+                <li>Daily inventory health reports</li>
+                <li>Sales velocity tracking</li>
+                <li>Inventory turnover analysis</li>
+                <li>Channel performance comparison</li>
+            </ul>
+        </div>
+    </div>
+    
+    <section class="benefits-section">
+        <div class="service-container">
+            <h2 class="section-title">Key Benefits</h2>
+            <p class="section-intro">How our inventory management solution helps your business grow</p>
+            
+            <div class="feature-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">01</div>
+                    <div class="benefit-content">
+                        <h4>Reduce Stockouts</h4>
+                        <p>Maintain optimal inventory levels to prevent lost sales opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">02</div>
+                    <div class="benefit-content">
+                        <h4>Minimize Overstock</h4>
+                        <p>Avoid tying up capital in excess inventory with accurate demand forecasting.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">03</div>
+                    <div class="benefit-content">
+                        <h4>Save Time</h4>
+                        <p>Automate manual inventory processes and reduce human errors.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">04</div>
+                    <div class="benefit-content">
+                        <h4>Improve Cash Flow</h4>
+                        <p>Better inventory turnover means more available capital for business growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="service-container">
+        <h2 class="section-title">Seamless Integrations</h2>
+        <p class="section-intro">Connect with all your eCommerce platforms and fulfillment providers</p>
+        
+        <div class="integration-logos">
+                <img src="https://th.bing.com/th/id/OIP.3meF7mC6eHnDmied3AsDTwHaFj?w=218&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Amazon">
+                <img src="https://th.bing.com/th/id/OIP.OiSAlDYfaApATGjtmNmR3AHaHa?w=167&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Flipkart">
+                <img src="data:image/webp;base64,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" alt="Myntra">
+                <img src="data:image/webp;base64,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" alt="Meesho">
+        </div>
+        
+        <div class="platform-grid">
+            <div class="platform-card">
+                <img src="img/marketplace-icon.svg" alt="Marketplaces">
+                <h4>Marketplaces</h4>
+                <p>Amazon, Flipkart, Myntra, eBay, Walmart and 20+ other global marketplaces</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="img/ecommerce-icon.svg" alt="eCommerce">
+                <h4>eCommerce Platforms</h4>
+                <p>Shopify, WooCommerce, Magento, BigCommerce and other store platforms</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="img/erp-icon.svg" alt="ERP">
+                <h4>ERP Systems</h4>
+                <p>SAP, Oracle, Microsoft Dynamics, QuickBooks and other business systems</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="img/fulfillment-icon.svg" alt="Fulfillment">
+                <h4>Fulfillment</h4>
+                <p>ShipBob, ShipStation, FedEx, UPS and other logistics providers</p>
+            </div>
+        </div>
+    </div>
+    
+    <section class="results-section">
+        <div class="service-container">
+            <h2 class="section-title">Proven Results</h2>
+            <p class="section-intro">Businesses using our inventory management system see measurable improvements</p>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="number">98%</div>
+                    <p>Reduction in overselling incidents</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">40%</div>
+                    <p>Decrease in excess inventory</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">3.5x</div>
+                    <p>Faster inventory turnover</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">85%</div>
+                    <p>Time saved on inventory management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="service-container">
+        <h2 class="section-title">Customer Success</h2>
+        <p class="section-intro">What our clients say about our inventory management solution</p>
+        
+        <div class="testimonial-card">
+            <p>"BrandSetu's inventory management system transformed our multi-channel operations. We reduced stockouts by 95% and improved our inventory turnover by 300% within the first 6 months. The automated sync between our Shopify store and Amazon marketplace alone saved us 20 hours per week in manual work."</p>
+            <div class="testimonial-author">
+                <img src="img/testimonial-1.jpg" alt="Priya Sharma">
+                <div>
+                    <h4>Priya Sharma</h4>
+                    <p>Founder, UrbanCraft</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="benefits-section">
+        <div class="service-container">
+            <h2 class="section-title">Ready to Optimize Your Inventory?</h2>
+            <p class="section-intro">Get started with BrandSetu's smart inventory management system today</p>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#contact" class="btn" style="padding: 15px 40px; font-size: 14px;">Request a Demo</a>
+                <p style="margin-top: 20px; font-family: 'Raleway', sans-serif;">or <a href="#contact" style="color: #FFB001; text-decoration: underline;">contact our sales team</a> for more information</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer would be included here from your main template -->
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+
+    <!-- Scripts would be included here from your main template -->
+    <script src="js/plugins.js">
+    </script>
+    <script src="js/drex.js">
+    </script>
+    </div>
+</body>
+</html>
