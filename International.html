@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>International Marketplace Support | BrandSetu</title>
+    <meta name="description" content="Global marketplace expansion services for Amazon, eBay, Walmart and more">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style start -->
+    <link href="css/premium.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/plugins.css" media="all" type="text/css">
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css">
+    <!-- google fonts start -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7CDM+Sans:300,400,700" rel="stylesheet">
+    <style>
+        /* Inherit all the main CSS styles from your primary stylesheet */
+        
+        /* Service Page Specific Styles */
+        .service-hero {
+            background-color: var(--light-color);
+            padding: 120px 0 80px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-hero h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 65px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .service-hero p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 0 30px;
+            line-height: 1.8;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 55px;
+        }
+        
+        .section-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 35px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-intro {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 23px;
+            font-style: italic;
+            color: #000;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .service-feature-card {
+            background: white;
+            border-radius: 0;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid #f5f5f5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .service-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-feature-card h3 {
+            color: #FFB001;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .service-feature-card p, 
+        .service-feature-card li {
+            color: #000;
+            font-family: 'Raleway', sans-serif;
+            line-height: 2;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .service-feature-card ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .service-feature-card li {
+            margin-bottom: 10px;
+            position: relative;
+            list-style-type: none;
+        }
+        
+        .service-feature-card li:before {
+            content: "—";
+            color: #FFB001;
+            position: absolute;
+            left: -20px;
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .platform-card {
+            background: white;
+            border-radius: 0;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #f5f5f5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .platform-card img {
+            height: 60px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+        
+        .platform-card h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .platform-card p {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .results-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        
+        .result-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 0;
+            border: 1px solid #f5f5f5;
+        }
+        
+        .result-item .number {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #FFB001;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        
+        .result-item p {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        /* Regions Section */
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .region-card {
+            background: white;
+            padding: 30px;
+            border: 1px solid #f5f5f5;
+            position: relative;
+        }
+        
+        .region-card h4 {
+            color: #FFB001;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .region-card ul {
+            margin-top: 15px;
+        }
+        
+        .region-card li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .region-card li:before {
+            content: "•";
+            color: #FFB001;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Button Styles */
+        .btn {
+            padding: 12px 30px;
+            color: black;
+            border-bottom: none;
+            border-top: none;
+            border-right: 1px solid orange;
+            border-left: 1px solid orange;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 11px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.5s;
+        }
+      
+        .btn:hover:after {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            border-bottom: 1px;
+            border-top: 1px;
+        }
+        .the-button-wrapper{
+            width: fit-content;
+        }
+        /* Responsive Styles */
+        @media only screen and (max-width: 995px) {
+            .service-hero h1 {
+                font-size: 50px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .section-intro {
+                font-size: 20px;
+            }
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .service-container {
+                padding: 60px 20px;
+            }
+            
+            .service-hero h1 {
+                font-size: 40px;
+            }
+            
+            .platform-grid,
+            .regions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media only screen and (max-width: 640px) {
+            .service-hero h1 {
+                font-size: 32px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div id="preloader-status">
+            <div class="loader-animation" id="pageLoader">
+                <div class="animation-container">
+
+                    <!-- Upper arrow (animated) -->
+                    <div class="animation-arrow upper-arrow">
+                        <svg viewBox="0 0 30 30" width="30" height="30">
+                            <path class="arrow-shape"
+                                d="M 28.925781 7.269531 L 9.699219 6.414062 C 5.984375 6.25 5.355469 13.484375 9.757812 13.605469 L 21.722656 13.925781 L 20.808594 25.96875 C 20.53125 29.632812 27.679688 30.019531 27.882812 26.292969 Z" />
+                        </svg>
+                    </div>
+
+                    <!-- Brand logo image (center) -->
+                    <div class="animation-text brand-img">
+                        <img src="./img/BrandSetu.png" alt="BrandSetu Logo" class="brand-logo" />
+                    </div>
+
+                    <!-- Lower arrow (static) -->
+                    <div class="animation-arrow lower-arrow">
+                        <svg viewBox="0 0 30 30" width="30" height="30">
+                            <path class="arrow-shape"
+                                d="M 27.476562 17.851562 L 8.25 16.996094 C 4.535156 16.832031 3.90625 24.066406 8.308594 24.1875 L 20.273438 24.511719 L 19.359375 36.550781 C 19.082031 40.214844 26.230469 40.601562 26.433594 36.878906 Z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <div class="content content--demo-3 demo-3">
+        <!-- navigation hamburger start -->
+        <div class="hamburger hamburger--demo-3">
+            <div class="hamburger__line hamburger__line--01">
+                <div class="hamburger__line-in hamburger__line-in--01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--02">
+                <div class="hamburger__line-in hamburger__line-in--02"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--03">
+                <div class="hamburger__line-in hamburger__line-in--03"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross01">
+                <div class="hamburger__line-in hamburger__line-in--cross01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross02">
+                <div class="hamburger__line-in hamburger__line-in--cross02"></div>
+            </div>
+        </div><!-- navigation hamburger end -->
+        <!-- navigation menu start -->
+        <nav class="global-menu">
+            <ul class="menu brackets page-scroll-closer">
+                <li>
+                    <a class="page-scroll menu-state active global-menu__item global-menu__item--demo-3"
+                        href="index.html"><span class="menu-number">00.</span>Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">01.</span>About US</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">02.</span>Services</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3" href="index.html"><span
+                            class="menu-number">03.</span>Contact</a>
+                </li>
+                <li>
+                    <a class="page-scroll menu-state global-menu__item global-menu__item--demo-3"
+                        href="index.html"><span class="menu-number">04.</span>Community</a>
+                </li>
+            </ul>
+        </nav><!-- navigation menu end -->
+        <!-- navigation overlay start -->
+        <svg class="shape-overlays" preserveaspectratio="none" viewbox="0 0 100 100">
+            <path class="shape-overlays__path" d=""></path>
+            <path class="shape-overlays__path" d=""></path>
+            <path class="shape-overlays__path" d=""></path>
+        </svg><!-- navigation overlay end -->
+    
+    <section class="service-hero">
+        <div class="container">
+            <h1>Sell to the World with BrandSetu</h1>
+            <p>We help you list and sell your products globally via Etsy and eBay, managing all cross-border eCommerce challenges for you.</p>
+            <div class="the-button-wrapper sign-up-modal-launcher">
+                <a href="index.html" class="the-button">Start Global Expansion</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="service-container">
+        <h2 class="section-title">Global Expansion Services</h2>
+        <p class="section-intro">We help brands navigate the complexities of selling across international marketplaces</p>
+        
+        <div class="service-feature-card">
+            <h3>✅ What We Offer</h3>
+            <ul>
+                <li>Etsy/eBay account setup</li>
+                <li>Localization of listings (language & currency)</li>
+                <li>International logistics guidance</li>
+                <li>Shipping policies and pricing</li>
+                <li>Global SEO optimization</li>
+            </ul>
+        </div>
+        
+        <div class="service-feature-card">
+            <h3>💡Why Expand Internationally With Us?</h3>
+            <ul>
+                <li>Unlock new markets for your brand</li>
+                <li>Avoid the usual compliance headaches</li>
+                <li>Access new revenue streams</li>
+                <li>End-to-end support from listing to logistics</li>
+            </ul>
+        </div>
+        
+        <h2 class="section-title">Global Marketplaces We Support</h2>
+        
+        <div class="platform-grid">
+            <div class="platform-card">
+                <img src="data:image/webp;base64,UklGRlYjAABXRUJQVlA4IEojAADwjgCdASp+AeoAPp1Gnkqlo6MhqDPbCLATiUMRfPfJ+f8/tmZB9a/wfPb4/7Uven3Phrjc90ecr/ofsB7v/1N7CP66dOjzNfuJ+yXu1+mj++epF/ev+H1wnoYdMZ+7HpD6pN9u/yHe3/jP9x4m+Xz4Z7n/GD+l5U+0vU+7p/53+B9t39N3v/NPUI9p/7De7wBfnn9k/7Xps/Y+an2y9gP9b/+R5avhv+r+wL/SP7v6w/+x5Xf2P/fewh+v/W1/eP2aC/wswCbsRhbqI3+uTsua5yY6fgTF14qLGVQ8peClBqJabA+B8D4HwNlN8+Z9eO8hB+Ghereb80QmVVI21Y/7gQJa+JXkDVi+2zvuHSJTgomHHRBFwD31TjazktA1Hlw1Pcij4iOvwSOapRWQSuuhpLL/Ecc5j5b64XXF2xYHi24e/9PrbVSpbWSoH0Yl/9YzQ0AqEqIqmQXVc5iJcswCTGLldU3887zM86eH2sV738TIlCk8a3shHyYFE7Zh0WRDNJF7u+TSbMHZsH5+VGjVccdK2T5eVkGjQtRASZQd4GS6/UYdTvmIFHCQisqHIMCEp6ZW3U1kKf2M2/mwEeblmSLjC0WqCsDTiuQLXXLpWB6902MQCIz2dGmhoIqlGc5q4gJ2K7hHb3dNqU3+2VbnT9/c0ocwDRvC8EM9PVcoZudID3WSo2yHcrgsAg+/a6UeOZqiCsozM4J7aGxj3PyD4lDh/CV2YnyGkHPXfHMf63/cJ+5RAQq8s1OrRs+fx3KYx3Cky/a7fzv20mqbaZM8J35u1wbWBjZjNTvqdMnd/mu76VYjAZUdEHWylSmEKTeT7uoxIdQNa5fDvhLu61eNvtvTrumRWMyQabuNYJF9Qegn9iOhx38ibBrdusOQ8F7wdCioDvaVlbvV9TYNZbdazWT+uAqnYtWBDmWTUYhqMCD9bRchVhxduaS/gACFI8Z52HYjoyu9ZQT5KGsKvGqTwvxOBBCOobJ5HskakX5ZsJ0cX12fKg8fXs2xYi5U41WZIIGhTRpnciWTJ37upkwn2s9LE249ULeGT3bIS6PzojIeS49AkL5ufbRL5WxvTN+Qh4Bkptz5EY3rbh8dXVGO4QIp48oujx3tiI48nFjdU4A1CxjSIQaOHQzL1wgXV5N41jRSXmS/yo9ni2zhafc3w9bUePdzHf3126GJ7OlgE+yhy9Th4HvcHtVB2lKNM2awDaZ+ijeAy2jchr9Jui3KVC/q+CLyDhAPMJ3hDe/USHmnW2UVWv7ulqv7h+IPj+X21Tdtwm46xodIzZjEnL9lfoBvbWPBvH3AygDFhGt2pMykPniNP885iAYkByDGDF0F2e0URl2QWc0W8HMd22Tt2RDicRNNdry8w8FI7XPrVOTC/EdhYPB6l8ebqHfM/BmXaKTpiPqYRVts4TMG/9wti7WBoj/x/iwAyjW6GS1oSH48aGBZeB7KtIKTrFp2E83MPBdVkOsrtaFwNSJ93f0v+O3i40Dx7eTHGJScJOK5LmV5dSD5uKIHFYxRYjxHh4AA/vqxmbpGWNa8XHOyfr3nsjxsVlvobWN2qQOQFUBqfPuwKHpS96ulSfpe63X1H93QDklSgwVnZytyXE9GcITtI+AS5V2P2+Hb6K8Ux0UxhG0IeyD3XQh2/aDDm2dmjks+CcRecNGXj9jN/PpaS+d+HQPKpcN5dM1nWXGGDv6Q+C1nZC+MjqbyJsuieJpzxZKXqS3NcJxpxlBwnKU+m0jJFW5J8GdbWc+KSEuJ9hZOoXYcxuQf8YpTH3UxcmbHGk72lMhSmR0bl4W+RW5gtDS8t6KSkrOHdAAOvY83KBwKRrarrREpa68GV7iuezEZ4OOSJKHoPRNcGAofRhyAAAAKYlGcYv9aCJ2ed/7hWM3wJ0zLvcx08e9SsNnSpROhseTTOc1PhqmQjlaYClzPcJpB+zSly19AXBptqsqJOpUr4l0l6VT0zyD/TL/hrNyh7Apvjz9P4v5i+gsYQtIWwX85hxKrwR0v9PMg8B3+umdP6oA0BvnbV9UNuZfNqpE9Pm+AZOZcmvq7+MDvstwXssATLNshkQcEMpK6betELJNg6Fr+6ORG2bJE4VcaIGE8NaBrcV2KEOcFVskMG+4CKfJwe4JQGu0T4+PCLe29x9mNUfX0i2e1SqUMBvZg+qoe85TGABwDDF7XbXchqIYAJrGKdqTIno5tl9XSr+IgN++xdFngPEgAHaNqj5DKo4eOpOJRM/ajHMc01os+w39icS9RiQNn0VQB/m0Zlr5Oy6AhhmgXSIMaFeviuYuIefgq8oey//yvS1CxRLiSXyy0R9M/ZlhyK8Eso4PVEeiDzunoDXU/SbN3Tr+Vc4JSLuVa/wcxzfZkeosL3HHpy3S6c6kbLZuwAKmlfJDG0BkwyT0M5iuzZnfKw/ceGWijHt/v63iv4QCw9RyJ9kw9iMS8fRRfG8szoVgHOShAaE6NcfOfjSesscPHi5wj37CgOj5Kkw9cjn1UQUNXajlu3qLO5f4I8hn8fYjol3oqPx+6lgKJ2LBgIs5t/1s9w1riVdWj48nGlmNqVL5aUByxzi9rInVd30rcKljSzlLwcrLkzhmTMBuT/uNHCuUwnZF5fBJS/4KEfVPqdTdXTxpqkks7FnoXUc58nxjui8AMSPjwcFmOVFIFCxWxfl8mcV0qxZYwWwqYMnasBjdYQamij8eeQFPV8pBFVVC+15YzYIz2fabZ1cVAWc9vnuHb028Kkw0xo0kSBXBUE/w/kbNCy1/CNd8dKTzusyvWlQwXWwpxJPWSo9yKgsUMAQgp/J9qDskktUeysPPfkBU2d08Pe5/E1y28OMT0DkKNzKr2DwoNyDIMx/JlX8K1BsuuIginHidyQpi+2qS6CCQW0SD4EhB/yXh+Uo4U0BnYtM89KAY2PYLiyXBjRzhAlFYorgBYeyhQwP/gWBm3ttOqfW1sAiORlcrau3FPMXT4Wi2w8I4MB8V6MK4WQjyxRlvu5qL/VolkcgMgJBAWIqoBw7HszBd7Je6FgygwxFyNhkFtHT4Y3ds0xdSknlMpJ61SFn6JHCwKpn8lSDCIOP94Ax5tuu5keD1winPeLSreLNxmU36RZA+MClkIIG4EmI3vK01uLT2wtYJVgjKLrkJIh/gquy+905+rtkhP40E4d0bdNMyRvU+yR4hCmyqom6XhRRRectD7msaaflKDxXx9sMkZbY2lY8ciNJ6h/0HC1z4FZ7Wg3azMN9NXSKSs89XZAgJhAhVtlKPUuKe5tvD3dAtTKW00+EJLpez+N1eqkQVO6vce/op2JX8WjN7XVXg03VW5MJwG7piPCPv6aDxddYvbxsgN8A+VP/jVRLGlMIOI3Qqn5UlLEdynfFK9LPfUoaNjXcFm9e6UAKVveIdAItEUJBCFTP50DjTeMHlQGx0nMwA97FRSRqMK8yhqygeeT0Q/mIA0P1qONJ61emJAfqHH6LOJbDLKAagO7bFmAjGBvN05ZL6YmKvP9jWI2YYx7qGF1CWFdLxqoiisIOoAQ7zCQ05+LRkOsQzFEPE44eKzocbmQ/22i7b6cR2wnWz7AwoJAkN+xMnKgRB0YTE0zaYDuMVetxrbxAuWzCFcuL+subEZBiCTsv+ies+noZ7vcWOLcLK/ltOSi9dYGm5S2eAgfn796A8BHlrsx5M3sVRLzhRFrbNT7LlQ+sIWgnc7lyz8Jmz9Nd4EvL91jyiFqdzWmFGOrfiEEQHHpNPjBRWrxrD95REc/N6c2K+O08ygIJ6BxB19A9oOYmXQJ+TGk73aK6y0G+8rza9hTq69D3h6YvQyD6GTraUlX8SugNVuE3UF5vIz/HfIY7vUBD0vtX6lcazXabV5X9tZ5zh/0iALbtMrtS/zK6J9/fry3ZzMhPv7qZGAB6PVGi28IVpl6GvD6MBsTlTEpol4x1GCmbE9HnYyGqUTsQpSWmgjk2gGShm59L8PX+MPz/RQYkDgEp0bq1h+RckwCyanIBR1VocPLwlcM4M0J/UCBle96rax41mnGfose3cdZvhfSFrbnoi4/4gn9HzjGvT2DH3Wg2NP6ntHokaMJWvmPVvdAqPamU6pqE/ibyaE/5xEj/9WoUbTDy7SJQTslg6tEEFFNMswgQ7nUEOZ3wWh4FaAC24pqh4lHOqjruqh1KZ0iqHCX3tSagPDl/YWZ5Monu0mt+Mrus6cJ5Zde6vzYCVPwNnEY2CR3ge44jmbp4+CATw6IZ3rt2jZ6CXYAFUfPD7KAAnx0TBIRYrVknoXLJB4cXs/z+49M2LDyWIBXgBX0Nc8biSaoixipLiu7NygmbpnjQqZR/mkhAHCeV4FfhnytgR8vh+JvfjesAPeJ5A+1Y5mxvjeB5rUEegBqMqadRqNrR29Hr09BGS9ZU2P+YOdjIcFEVbrMjYeurLzogK9sXNSqKWmHMV5JarhKow/NXy1PJz3eYYBflXds5PIz2bLBxgp03DoNYJxvQAznYAeV7UV79vkCMn78VLwnJLNIiKfJ0z5mf2JS4b+og1uLns1mJ2wBFs/0MpqSa2u/NGIegXzfoxg6fUjmmLWJdqazFKt0LNRmm0SIWVUWnU1WXxzP0/DXT4udl+2H0QKSwDU0XhtQeEPWM2UfK2my46ffV9+7Vvhy/WN8ActTccJUk+USJfNH60LM/0djBuL7KD8XZQI/34mCzuL0PQ1tc7SsPxCGvBlcpoY8If2VIzv+doEL+RWvRZZH9uT33xs/GHS/PJY8uzWXEFQpcK5E36WIMzOWvLDyrTRTPdi7Qnw6oC66USJNyH/71oqssDDOAHyUhlBvUQCqCWdlkLBjHzWM/dbdfjE3NgqI4OT9Clz8WaVCuPujObUC5x/xBR4pIt0AqN953J3z8qOA+aMX4o/h6Y8YWfihjMH4NyYeS4Yfy+POlWxEgweXbwR5zjfmHQtxQ4VghfKz1x2sSqEAiSB7q38No4M3CmGJXaEvR4wNWFcvPhh/X2ZVmGFsSXknrP4tejC/220rHJGvoTBc6yXqudFJ3Iu7OClLD2WuNAzrdhsjqh5PDCJNdW5ZSeF4nUvLG5hg2+cOrIBAEDQ31qam2jBOUm0NtP5dsWRGtkF9KC2wI+GSIgPYUu4VE64JTUY5YQQoueM7F+xE9r9CdX2Jr63iMvrVFozgwR2BfB6cQOlG1w/+SaOptld+LvK2dfqWqKKF/sPc8jgTni9FJ6ThUp48aQcXln5QtQv6qmfWCtLYS73qygf0MATtBmcEYR327nM/viWbAlvMVkdEr3N9EV1N2ozw8FVhPWgFjPZDddafo1YtBq3uj26bq9afSBEu9IsnFYnG1JasIr34VDEduj0e5eTBgvO/aEqOslfGv8fe9W3jJWMVzifbzjiVVwvCOeK6ihCHAcrm0jG4J5sYI1AFS4bmnSRvVLRTWD/LA2QO4or76NA57QsFQRFQQMTp+oVymuaf8yBTfLMW7zVizV6dF8en0gD9x5TwKHpfJEzZuQCSgcNcbQHsG9JLPLDeoHlYcy2eX27CNQqrHsvdIFZpMJyk/Gt5Ts/iRwagonBM9iAHQG4e7ysy6kFGpxnW4xV1b/puW8XG2ZizyARqUKjpSrfV64JZxUEkvAOa8VxM5gnWSL8pfDxPY1Ir5SAJyPWU1LJnRyHizXUYIzlILuub2wOMKw2lAtzaU+oezy6a3o/4NVbMHgRtSsv9SX94gVh0DUlst1iOW4ssq6R3BiImLYR/0C8pcUjkGa6L0HS81P55o2hiq2SWEb620YxNliz5QXhXTExsCpsdNAgPMj/Y9lAvJtVPjAalXpKgiB4fKVF6/e7bhXqYlI2kAI/LEfAXm1LYOOvEuFv2Tpq8YwqJGyeS20yGYUaNrYeS+r4h6q+5OP1YoJnNnrU1d0o30RpQmih3J5GpZGpZGfsC9lLJyGpySpKoFdcGl4ah0tBQjfhFKfBNi6mJnzkdzt54Vy0inIPxdH0+ebZjJF3zZ4hr/3NYYwzQwrd5VVIFk4PKi+yteafXCwf9xmmKmu7BfR9MFsTk9svKa4yXfJoOOjiZZxJ17ybqTXeHAN9xZbBEhh7OVqVMU67QBBy770zfcsF1HviLNhDX9kY7BkllTxrTTbNCapTeLTwYtN9e/IGD6TtxXs2V9ocpDObjqFCLlAoh4DDtv3hfNhFh5OmYzTtJlsKR+t0K+1+x/u3NCcNoBNyQknKgx9PNWuAK4dI4LlO14mjjFdAPBMMOVmYySwa4+AmESEgtNJ6k65ozLcja0DYyA1Cp76AXRIndw1mkt9GHUPX6twxwhcHs4WDuYBMorQeJ4f10nJ+9aJ0EytnjQ9NfzIXjfStIugRBm93CusN++5pRxfEL7EZCtI2qFJ4yI0BRPfUiegYqPHdMAm5a9t48HtsbSLhoz0Nwf+ET9aOcmb+ZkjxoVoKu746OdUkNCKDtXX9sI3i5HyEy1p9Osimh8KV3mxLoo0t465LDBzNPOHMQU1KpPQOruIgIXLGjp46dGGcpF3gw/aAqjZQ+79S34T3hS96iqxduXrnGb2dZ8hKIQ+UuajzAWit4pLM1Wf3rSCw3Mbonnc2rlK3K2BZUtIPZsbiuWVYP684aTXBlvD11Uaer73A9Ewd+5KOgXbk6AfFgk/Th+yFjQ0bvJCneSUhW+Z0Z8dmwhpTlxNgO3DAFESTz8hq4V6QXVaMHNvicyAMg+f8QRwckMslHnK1RE2Gg8bcKYMbogyQ5pGNyXHncQ1Mlv/UT7W0YLL9wPiyZ6tT60DEYmxvP/2BnEaTbmqgkTyvv2EVWYqSebQUrF+7Nx7ycK1Xd22yHf/lIedXwciclk0QVoOengWMpG5l33tLrqulTbXlHzbLFmAASvw8zR4PbwcwTZYn/DHv5+jCg4CEb9tZuAZiMpNOV/qIaqS376+MWVOpq0MDtVCUfdhcKKm4Oca4Nvbfyg0EESCYRzCOpRcsRG3vA/DUTLnZC8I7fj/nsqir7hMufdcin5hrYEMj/PbzlVoA4BUqVAuL1eujVHNidZE68k4gtfBxv2Hqt7dEkm3XTQeOqN3N0ZYPzYDLN0XUIZ36xJJsPOfzeDBZJntwbZm4pDJjwj+qgkVc5K25So38Tj1h2Ww7CpH/Yztv2s5u5Yhh340haYyIDzGwejttoqWrZZZ3FY0JmA9lte5O2sqB242gqwFPPOsvvYz53gkTwY7n/WPFVKFImysy0CUpWA1L5hg9mXpmnyRUwrPXANByY5j58vp93gpU9nk0WccGmlx8T1gGFcFeqJwahjIneL1HMyHgE+gtfwZLz6RRrUIoEZPDDnGxGWoxiaQbpw+80jRLdbSulwBYmXs/hobz7IH0IAAQXOBwaKeTKy/N070/F68m9vFPRBO1hhMq6k571awx/57+V5OFnR8HQN5egB+y8UW+FyIDHwkMhs8X8Y5jH95C0ep2bLtCk0DAqpi2ecl1NpgfOT97cB0+ZDlirpZj3vemMtC0nggi0WvNo+vfZK8vi4C6DFVHC3eo55Fz6nHdr3usGkNGRi2FabWEur0gMQe6X5+YScMtmCPAX0x+bzJUppCSqeqodRZHsepxgctziBKGNl5B0+xo1+irzyIUoq2nWLzue9HUfF2M0HxlNw6qajAljrA/7MFxwzVudiWUE/EP+eFoQIfmdj2dn2lwStq9QWaGu7BG1RQw55n0TaqqCHloE2aMxnF5N5Kx5RoY3/Xb+QT8FovomK+jXxD5ZnPS9Za2z3zeDylPpuTA1AYDdY17WTL9hosYimEg93z5fNvnj6V/zPYWkLYv/tdsvaqTLH6PsCF4VTxEzMAvCV39ey7TizT+/fLZ8+wlJpdMgvr9nyj/mQoZR//Wezwh24O75ZLAieEdZWGPZS24IWxgPU7br2Td4+HyeDh56I07JRvyZF6SI7ltyLudOayGWYxgbW0cjyYhwWbUz3Xel9FWJMT/T7rkQWg2QAAbM19Pj1bsGa7kLNjqh5PeGG81XRIezMx8Qh4D1Y7P2dJAwm2EyF/dgK7Zoixb6skIypkx/JHBNDymOMIDbgWhFGvXYtaYLPdAu5zn9SM3QweYKwv/iYy4/eAp69lEVwWz259qINR/GYMZ/cI6kKIaiiq9OnS8pZE00Dj/BQrEezyQnj2J/G4tlof32ppqYDun+oR86HQSJnyXGTUvnmrKrZfCVEmw27s3BtsWNN/0frK59gDbH/jtuZrBqFFjxw+4N7SuiH7icLpq8lJJX9dbTPfn9HXGTx+vqOwQdvWuxZk+boxaItessNV/GHVKEx6IgCA/p9Z/CjG7it7QIpuq9noj5TBl+yu4n/pghnTR8SnKZ4CRh8rpRd2wjkvk7701QRcFff7itk8E9vXmSD7/TVqUR4Suzzkrn8fr0nQWDWmXnTrWiD8nCGV9srGCKw37UF3oQSDanX+L7BzZLIYeibkRuNMLHa3kn83zFa0oDgl8yomeUli4GZY0PJMzV+lVw1vYfmwpx4csajtgO86VCwGOvB+unc1FkxEYTqGRxNX90Rh5jQ17uiAII3e+pJG70vjhkvFuLpCxd2PcGcWG+Exi3hxZUCNGnO/XSnRoZXm960EfkAnrjtFbsBjfQquluMhJLWkNXOR/OsLcHa7hcoQGYDeF+P+CCXVJS6ttqtXg20gR/4Pj6uAvQDCZF3HYPwglF+OWL3Ot/r8Gfu5f3jwzVu5JVWdYix7+7QqQwJ25DJi4SQdYmQkKDFIw7m2jwyPkMdUP9UMWDPw0nqMpvS1pXygC8FqgMI3sfTwhrTVimOFN+nfuIno0w5hJA1Er8Di9M+eDnOfCyV1cWSt1ucRHnFyxdhu7ADBIpW2si24bpITV1Ot/hsvRmimUx5DZ+bKnmea/sLSkxjzrTwsoq0nPRfKd/gBH8B9vW8Mrm1gU5pcSnYubkUFLx34aLG/3kzRW1c6bL4/kaWore3hlKhIcVuWbiNGcVczYDC0pcNTz0wUjXkX9Gr8YQKv0Nr9FGYR4Yq8FxbmcNQxQ0aFlEaqZ/B5l/N+mmEsRyd3eBXsa112xVjTyWt+LNEdzKN8x5P8y2aICtG+cGGCL5uVQq5SvRo1s3knP+CVYDiWDU1KYXG79Vp1MLprHwKnEdq6fZchV0LdKtsQE3HLQXjXG7WZsUjbz4uKWPxgdI7q+iLyi94j+nTz6rBD5jIj33ksJnKwChGW2cw7ho4tVjOF3Bf3+6dkT746N+Rg55B0iFuha7YAatznKlDehRTGquK4/xR2RmN78wK0sAbVgrYDjcVcyMNBelBVPQGR+EIQyVdb0dP9gS9QXiPPHHZCg4rfNyeb5l67KPdl8/TEg1ONa6IBzj05D+O4EERx2C6ubzIQXyKJ/gyJyC98AwdCIBf6sfvKr3/8PjZdZDOeP+YsQv5sYnbPNiKbuf91orPbp4uq7i+7LQ82TlD22eFmcrRmaFP7n/MhA4zl69kdBVxfdc+kUwF/ffIBC7oYSM+1rtjibM9AwZH/Q7ixsRW6o99rwxr5UKRd0wOCdis5WqmBWtwXQ8zNcudz8733g6LTkbbBychL4gg9R+/mvk/HtoZkpd/pOqOgLEvs9gYHXwBokuJGtUi2llGsbG8HoY9pDlvfzASY9Zlg6DFMfY/IzouG6DIg7ly4lXWgGm68niRAmHfX6t+nj1k3zs8VZMxkAUq7ogzKTFKBTbnpjgpgFr0BZCg9pcNochgknMTUk653X3p+EZQnkWgg/xUeQjURLqzM5jYEjjZCTScReoX+XkknyDEDF28n9IRNyMi10wYReMFuzjWbp4/e2gY0CV4ZOF6WvNsHXTRROuwR5M09svmJZWRhRFKYHs8WUlIn9Vr/5aAiPdwNgO4Jz18nxknbu28EFru2UN+rH4Av7c3/auIwRRD1zIIeAKOvg0WrrRQNVMiQyNwbKZNkw27jDd81bWZsvO7CNEnMkRJpj8dtwcCWVPy1hYmembXiWAN6iQxK3K+ulfETymyvnlinVeBellfOLd7+3qc3+anGHCY7Lvdad1eJjRIYFSBNEf8STTP/lDu0iINzAk9mV88rVFkoz4pQSu+pbmoSyT8IktlztP2uawPmdw0nF+b4ptcxp0QD7hxJyP0yVTOvDbocctWrIez+BC5jQrMa3CM6UEuw6QE8YGD4AX609QhL0w6/734AaphboBU/jx0lVwHEC+LvmAUM+DHAhtPKR5gI+vQkzR9XrW0GdZq3/Xy7iBz7o9a2ST2B2HvBCTtLAhyKLjUy//lDfW5BQ2d78bey+6iI9n4XDIaPotTgkZhLTQZBB6wPZtBU+JeQWBopB32/O6B8Q51aQm5hQupDRfTUwMXtGuoa/ZE839fURFDsT5BizxjvVfunGUAmTj8dpsI5A0H6AYXQfCt0iddPeXyzSgvAkAjQ9qBlRSjlbjykcwfCqSaKrdJWNkgjbTgxl0qBKVGTRGLR6kU9xxzoFd6HIpTlI19nVcGu2qpIlyPu3Z2whXu835Zn7zK/yxfSO3Ayj8PxzziB9ITs3Cf9j1qxrIi+UZ4qyKWU+sk1xSK5L8Ne0UMwfeeh/li0bgLIfzeLg29NDMFmk+e6EgBry0KaOOvdp7BArvxqM2/RH3L2YGokZ8JfVgoHtYo8oVkl+ecDXOSjnNyPIZqvwMc9KPYlSbN+3RnD91Z+MtK0vTLia8/StNOQY+styJUZqUDhaLvbvzWOBDb+2cYVyTPxg9KlJdKn5c4vY/nMo0gEo+kDlaVwPr1z2217QW3gVWHElRwcnqEMnMOqjaZUwIpwh1SprTHI013THr4rWN+R8rHB4qfGBPgHXp1U5xPlrl8AFr6Bg8bVh4Z2YMHyMNy8mA3CNdIMynSRNKzvI3iK0WGdSCfV0ZPw/mcccm39x7W/v+UrlwoOSLZajcjz9kX+VxyoHkqvLFyNBlGotVlPxy6Fa+toGkP/71BJlj2XH/Hgc3p6HRY8GfOGhoDH+19hjJFbrnXLrBhwaePeQvODNSWGTl2YMoVKlh0wlPFjb1kPioR4m3YS49VmvZ6ZPm04O8PZWCn//4DrFJenuqjtzvJgYTk2J4n88swZJIkbSj5xOCY7Nt1VgVUwYfS3VuEpJlulo755ycwxSa1RZVpVEKXkL7bH14fG+gZcD0EYoZKDkum0gE2W6UyC/F03OxxcAqieuuIhuV1j6zbREcSnkPOVJhee9bQqRlaLv8ZDNkXJgeoWS/wUnyGmPwSOnv9RZoUktGX+nlrxJGG/5qauIaugd/A33fZkDF35/s0xSirG2Nbq3mSgefMxFEaRvTs/WiAZn0/u9LxsRmnQq8mNgbUUC+NGMya+rtu0ED/tpi0AkSADqsTLSc0pM8uo3jPNico5HQ4tn8jTVh6M0MCDtwR8Maszv6lNHqinNJIF4IMSOcnnQsO6oSaL+5wtTQ+EM0i+mDoHlWygteed9KFz8U4z0qyBp1CqbbGJ0qcrsZ4xy6bhgvxdVLlR5PtHy9UabVYq5rEoSIaMczLqfYOrhJLhkVj167uljgERjTXSdQgCJiR7P2+E+U/Oj+YVqELK99xTmgLDm/mtW/6o2ssDmA+19KITd3VFFxQKyNGRneqUgXEtchFYi4mc8X/eYv26eKrj21CtdZQtRlIeY+rvsBTMlgDHRz8GOuySPOsmSHRb44x9w6XGUekUbVsp4mBLL8FqO/ATgPfhT2n0+6dFu8qRtgRpjOYeCDrme/xOKj2h/xMCGDCugLkTm779kPPtUmrJpix2zmTPN7o2RWQCT/pnOmdYxWJChvsqaxkJhwk3i3r++r1G0M9yaYROodgJyuFWKbbKvvFUJ5/6aM4DzaFvm75NB8qHn265Nvl1tYiUdsJsUqLxQo9PxI4PdmTR6srpS8xmSyVzX59/AU2UPSyl+C99VKwZhl0CgDoofyXNXVlnhJHALKs84iJG0Ch7kup9I6dqEyDsRpPr08oBkBpyFVb6e26/m5BIz4yarDl7Xz6YRx0b3d9hu17jGclGB2lDS5UblOT0eby1WmDMhMct6gpUjBUJgdhMpG9dBlR3Gk7xrhXThBrTnSujk4ABM4AAA" alt="Amazon Global">
+                <h4>Amazon Global</h4>
+                <p>North America, Europe, Japan, Australia, and emerging markets</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="https://cdn.worldvectorlogo.com/logos/ebay.svg" alt="eBay International">
+                <h4>eBay International</h4>
+                <p>Global marketplace with localized sites in 20+ countries</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="https://cdn.worldvectorlogo.com/logos/walmart.svg" alt="Walmart International">
+                <h4>Walmart International</h4>
+                <p>Expansion to Canada, Mexico, and other Walmart markets</p>
+            </div>
+            
+            <div class="platform-card">
+                <img src="https://cdn.worldvectorlogo.com/logos/rakuten.svg" alt="Rakuten">
+                <h4>Rakuten</h4>
+                <p>Japan's largest marketplace with global expansion</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Key Regions We Cover</h2>
+        
+        <div class="regions-grid">
+            <div class="region-card">
+                <h4>North America</h4>
+                <p>United States, Canada, Mexico</p>
+                <ul>
+                    <li>Amazon.com, Walmart.com, eBay.com</li>
+                    <li>Tax compliance (US sales tax, GST/HST)</li>
+                    <li>Fulfillment network optimization</li>
+                </ul>
+            </div>
+            
+            <div class="region-card">
+                <h4>Europe</h4>
+                <p>UK, Germany, France, Italy, Spain, and more</p>
+                <ul>
+                    <li>Amazon EU marketplaces</li>
+                    <li>VAT compliance and registration</li>
+                    <li>Pan-European FBA strategies</li>
+                </ul>
+            </div>
+            
+            <div class="region-card">
+                <h4>Asia-Pacific</h4>
+                <p>Japan, Australia, Singapore, India</p>
+                <ul>
+                    <li>Amazon JP, Rakuten, Flipkart</li>
+                    <li>Local payment methods integration</li>
+                    <li>Cultural adaptation services</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <section class="results-section">
+        <div class="service-container">
+            <h2 class="section-title">Our Global Expansion Results</h2>
+            <p class="section-intro">See how we've helped brands succeed internationally</p>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="number">150+</div>
+                    <p>Countries we've helped expand to</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">5x</div>
+                    <p>Average increase in addressable market</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">28</div>
+                    <p>Marketplaces supported</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="number">12</div>
+                    <p>Languages supported</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer would be included here from your main template -->
+    
+    <script>
+        // Simple animation script
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-feature-card, .platform-card, .result-item, .region-card');
+            
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease-out';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+        });
+    </script>
+    <script src="js/plugins.js">
+    </script>
+    <script src="js/drex.js">
+    </script>
+</body>
+</html>
